@@ -1,10 +1,14 @@
+/*
+	Author: Aniket Badhan
+*/
+
 `timescale 1ns/1ps
 
 module control(
 	input clk,
-	input input1,							//carry
-	input input2,							//zero
-	output reg out1,						//ctl_ot
+	input input1,					//carry
+	input input2,					//zero
+	output reg out1,				//ctl_ot
 	output reg [3:0] out2,				//ctl_sbs
 	output reg [3:0] out3,				//ctl_alu
 	output reg [2:0] out4,				//ctl_shft
@@ -51,7 +55,6 @@ module control(
 	end
 	
 	always_comb begin
-	
 		case(ctl_nxt)
 			globals::NXT_NXT:	begin
 							csar = csar_nxt;
@@ -91,7 +94,7 @@ module control(
 								csar = csar_nxt;
 							end
 						end
-			default:	begin
+			default		:	begin
 							csar = csar;
 						end
 		endcase
