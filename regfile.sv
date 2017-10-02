@@ -2,9 +2,9 @@
 
 module regfile(
 	input clk,
-	input [3:0] input1,										//ctl_dest
-	input [3:0] input2,										//ctl_sbus
-	input [11:0] input3,										//ctl_address
+	input [3:0] input1,						//ctl_dest
+	input [3:0] input2,						//ctl_sbus
+	input [11:0] input3,						//ctl_address
 	input [globals::WORDLEN-1:0] input4,				//data_in
 	output reg [globals::WORDLEN-1:0] out = 0			//data_out
 );
@@ -71,33 +71,33 @@ module regfile(
 	
 	always_comb begin
 		case(input2)
-			globals::SBUS_R0:			begin
-												out = r0;
-											end
-			globals::SBUS_R1:			begin
-												out = r1;
-											end
-			globals::SBUS_R2:			begin
-												out = r2;
-											end
-			globals::SBUS_R3:			begin
-												out = r3;
-											end
-			globals::SBUS_R4:			begin
-												out = r4;
-											end
-			globals::SBUS_R5:			begin
-												out = r5;
-											end
-			globals::SBUS_R6:			begin
-												out = r6;
-											end
-			globals::SBUS_R7:			begin
-												out = r7;
-											end
+			globals::SBUS_R0:	begin
+							out = r0;
+						end
+			globals::SBUS_R1:	begin
+							out = r1;
+						end
+			globals::SBUS_R2:	begin
+							out = r2;
+						end
+			globals::SBUS_R3:	begin
+							out = r3;
+						end
+			globals::SBUS_R4:	begin
+							out = r4;
+						end
+			globals::SBUS_R5:	begin
+							out = r5;
+						end
+			globals::SBUS_R6:	begin
+							out = r6;
+						end
+			globals::SBUS_R7:	begin
+							out = r7;
+						end
 			globals::SBUS_ADDCONST:	begin
-												out = input3;
-											end
+							out = input3;
+						end
 		endcase
 	end
 
