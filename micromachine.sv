@@ -1,3 +1,7 @@
+/*
+	Author: Aniket Badhan
+*/
+
 `timescale 1ns/1ps
 
 `include "GlobalConstants.svh"
