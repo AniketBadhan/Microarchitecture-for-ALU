@@ -6,8 +6,8 @@
 
 module alu(
 	input clk,
-	input [3:0] input1,									//ctl_dest
-	input [3:0] input2,									//ctl_alu
+	input [3:0] input1,					//ctl_dest
+	input [3:0] input2,					//ctl_alu
 	input [globals::WORDLEN-1:0] input3,			//sbus	
 	input [globals::WORDLEN-1:0] input4,			//shift
 	output reg [globals::WORDLEN-1:0] out1			//q
