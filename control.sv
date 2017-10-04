@@ -20,14 +20,14 @@ module control(
 	
 	assign cstore[0] = globals::O_NIL << 31 | globals::SBUS_IN << 27 | globals::ALU_PASS << 23 | globals::SHFT_NIL << 20 | globals::DST_R0 << 16 | globals::NXT_NXT << 12 | 12'b000000000000;		
 	assign cstore[1] = globals::O_NIL << 31 | globals::SBUS_ADDCONST << 27 | globals::ALU_PASS << 23 | globals::SHFT_NIL << 20 | globals::DST_ACC << 16 | globals::NXT_NXT << 12 | 12'b000000000001;
-	assign cstore[2] = globals::O_NIL << 31 | globals::SBUS_ADDCONST << 27 | globals::ALU_PASS << 23 | globals::SHFT_NIL << 20 | globals::DST_R1 << 16 | globals::NXT_NXT << 12 | 12'b000000000000;		//2, LCheck: (R0 - ACC) || JUMP_IF_Z Ldone
+	assign cstore[2] = globals::O_NIL << 31 | globals::SBUS_ADDCONST << 27 | globals::ALU_PASS << 23 | globals::SHFT_NIL << 20 | globals::DST_R1 << 16 | globals::NXT_NXT << 12 | 12'b000000000000;			//2, LCheck: (R0 - ACC) || JUMP_IF_Z Ldone
 	assign cstore[3] = globals::O_NIL << 31 | globals::SBUS_ADDCONST << 27 | globals::ALU_PASS << 23 | globals::SHFT_NIL << 20 | globals::	DST_R2 << 16 | globals::NXT_NXT << 12 | 12'b000000010000;		//3, (R0-ACC) << 1 || JUMP_IF_C LSmall
 	
-	assign cstore[4] = globals::O_NIL << 31 | globals::SBUS_R0 << 27 | globals::ALU_AND << 23 | globals::SHFT_NIL << 20 | globals::DST_R3 << 16 | globals::NXT_JZ << 12 | 12'b000000000110;		//4, R0-ACC -> R0 || JUMP LCheck
+	assign cstore[4] = globals::O_NIL << 31 | globals::SBUS_R0 << 27 | globals::ALU_AND << 23 | globals::SHFT_NIL << 20 | globals::DST_R3 << 16 | globals::NXT_JZ << 12 | 12'b000000000110;				//4, R0-ACC -> R0 || JUMP LCheck
 	
-	assign cstore[5] = globals::O_NIL << 31 | globals::SBUS_R1 << 27 | globals::ALU_ADD << 23 | globals::SHFT_NIL << 20 | globals::DST_R1 << 16 | globals::NXT_NXT << 12 | 12'b000000000000;		//5, ACC - R0 -> ACC || JUMP LCheck
+	assign cstore[5] = globals::O_NIL << 31 | globals::SBUS_R1 << 27 | globals::ALU_ADD << 23 | globals::SHFT_NIL << 20 | globals::DST_R1 << 16 | globals::NXT_NXT << 12 | 12'b000000000000;			//5, ACC - R0 -> ACC || JUMP LCheck
 	
-	assign cstore[6] = globals::O_NIL << 31 | globals::SBUS_R2 << 27 | globals::ALU_SUBS<< 23 | globals::SHFT_NIL << 20 | globals::DST_R2 << 16 | globals::NXT_JZ << 12 | 12'b000000001000;					//6, R) -> OUT || JUMP Lstart
+	assign cstore[6] = globals::O_NIL << 31 | globals::SBUS_R2 << 27 | globals::ALU_SUBS<< 23 | globals::SHFT_NIL << 20 | globals::DST_R2 << 16 | globals::NXT_JZ << 12 | 12'b000000001000;				//6, R0 -> OUT || JUMP Lstart
 	
 	assign cstore[7] = globals::O_NIL << 31 | globals::SBUS_R0 << 27 | globals::ALU_PASS<< 23 | globals::SHFT_SHR << 20 | globals::DST_R0 << 16 | globals::NXT_JMP << 12 | 12'b000000000100;
 	
