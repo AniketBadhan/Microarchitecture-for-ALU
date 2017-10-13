@@ -1,5 +1,6 @@
 /*
 	Author: Aniket Badhan
+	Description: Based on the control bits, perform the desired shift operation on the input
 */
 
 
