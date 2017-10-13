@@ -1,5 +1,6 @@
 /*
 	Author: Aniket Badhan
+	Description: Assigning the register to output based on the destination, sbus and address control bits
 */
 
 `timescale 1ns/1ps
