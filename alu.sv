@@ -1,5 +1,6 @@
 /*
 	Author: Aniket Badhan
+	Description: Generating output based on the arithmetic instruction
 */
 
 `timescale 1ns/1ps
