@@ -1,5 +1,6 @@
 /*
 	Author: Aniket Badhan
+	Description: Generating the control signals for the ALU, Shift, and other blocks in the design
 */
 
 `timescale 1ns/1ps
